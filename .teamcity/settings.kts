@@ -39,6 +39,7 @@ project {
     buildType(Step1)
     buildType(Build1)
     buildType(Build)
+    buildType(BuildAll)
 }
 
 object Build : BuildType({
@@ -104,6 +105,10 @@ object Build1 : BuildType({
         snapshot(Step1) {
         }
     }
+})
+
+object BuildAll : BuildType({
+    name = "Build All"
 })
 
 object Step1 : BuildType({
