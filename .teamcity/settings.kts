@@ -75,6 +75,8 @@ object Step1 : BuildType({
     params {
         text("Confirmation", "", description = "WARNING: This will upload the installers to the web site. Please review the Dependencies tab for what versions will be published.", display = ParameterDisplay.PROMPT,
               regex = """\biamauthorizedtorunthisbuild\b""", validationMessage = "Please contact the product director before continuing.")
+        checkbox("DryRun", "", description = "If enabled, does not perform any publish, only reports the actions it would take.", display = ParameterDisplay.PROMPT,
+                  checked = "-d")
     }
 
     vcs {
