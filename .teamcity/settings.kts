@@ -31,6 +31,7 @@ version = "2022.04"
 
 project {
 
+    vcsRoot(HttpsGithubComIndydutchCheckBuildSequences0git)
     vcsRoot(HttpsGithubComIndydutchCheckBuildSequences1git)
 
     buildType(Step2)
@@ -89,6 +90,16 @@ object Step2 : BuildType({
                 filename = "step2.py"
             }
         }
+    }
+})
+
+object HttpsGithubComIndydutchCheckBuildSequences0git : GitVcsRoot({
+    name = "https://github.com/indydutch/check-build-sequences-0.git"
+    url = "https://github.com/indydutch/check-build-sequences-0.git"
+    branch = "refs/heads/main"
+    authMethod = password {
+        userName = "indydutch"
+        password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
     }
 })
 
