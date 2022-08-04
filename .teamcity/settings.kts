@@ -111,6 +111,8 @@ object BuildAll : BuildType({
     name = "Build All"
 
     params {
+        checkbox("env.DRYRUN", "", description = "If enabled, does not perform any publish, only reports the actions it would take.", display = ParameterDisplay.PROMPT,
+                  checked = "-d")
         text("env.CONFIRMATION", "", description = "WARNING: This will upload the installers to the web site. Please review the Dependencies tab for what versions will be published.", display = ParameterDisplay.PROMPT,
               regex = """\biamauthorizedtorunthisbuild\b""", validationMessage = "Please contact the product director before continuing.")
     }
