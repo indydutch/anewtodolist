@@ -1,5 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
+import jetbrains.buildServer.configs.kotlin.buildSteps.python
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
@@ -60,6 +61,14 @@ object Step2 : BuildType({
 
     vcs {
         root(HttpsGithubComIndydutchCheckBuildSequences1git)
+    }
+
+    steps {
+        python {
+            command = file {
+                filename = "step2.py"
+            }
+        }
     }
 })
 
