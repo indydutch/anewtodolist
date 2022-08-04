@@ -84,6 +84,11 @@ object Build1 : BuildType({
             }
         }
     }
+
+    dependencies {
+        snapshot(Step1) {
+        }
+    }
 })
 
 object Step1 : BuildType({
