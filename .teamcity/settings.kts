@@ -60,7 +60,6 @@ object Build : BuildType({
             enabled = false
         }
         finishBuildTrigger {
-            enabled = false
             buildType = "${Step2.id}"
         }
     }
