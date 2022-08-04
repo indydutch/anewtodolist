@@ -59,6 +59,12 @@ object Build : BuildType({
             buildType = "${Step2.id}"
         }
     }
+
+    dependencies {
+        snapshot(Step2) {
+            onDependencyFailure = FailureAction.FAIL_TO_START
+        }
+    }
 })
 
 object Step2 : BuildType({
