@@ -84,11 +84,6 @@ object Build1 : BuildType({
             }
         }
     }
-
-    triggers {
-        vcs {
-        }
-    }
 })
 
 object Step1 : BuildType({
