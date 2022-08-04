@@ -77,6 +77,14 @@ object Build1 : BuildType({
         root(HttpsGithubComIndydutchCheckBuildSequences2gitRefsHeadsMain)
     }
 
+    steps {
+        python {
+            command = file {
+                filename = "step2-1.py"
+            }
+        }
+    }
+
     triggers {
         vcs {
         }
