@@ -117,6 +117,12 @@ object Step2 : BuildType({
             }
         }
     }
+
+    dependencies {
+        snapshot(Step1) {
+            onDependencyFailure = FailureAction.FAIL_TO_START
+        }
+    }
 })
 
 object HttpsGithubComIndydutchCheckBuildSequences0gitRefsHeadsMain : GitVcsRoot({
