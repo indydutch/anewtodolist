@@ -45,6 +45,10 @@ project {
 object Build : BuildType({
     name = "Build"
 
+    params {
+        text("PublishVersion", "", description = """Publish Version we are uploading. Typically the shortened version, for example 12.0 or 11.2.4, must match the start of the version in the files provided as input. Set "preview" to publish preview build.""", display = ParameterDisplay.PROMPT, allowEmpty = false)
+    }
+
     vcs {
         root(DslContext.settingsRoot)
     }
