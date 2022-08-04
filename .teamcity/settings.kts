@@ -1,7 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
-import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -29,8 +28,6 @@ version = "2022.04"
 
 project {
 
-    vcsRoot(CheckBuildSequences1)
-
     buildType(Step2)
     buildType(Build)
 }
@@ -57,14 +54,4 @@ object Build : BuildType({
 
 object Step2 : BuildType({
     name = "Step 2"
-})
-
-object CheckBuildSequences1 : GitVcsRoot({
-    name = "check-build-sequences-1"
-    url = "https://github.com/indydutch/check-build-sequences-1.git"
-    branch = "main"
-    authMethod = password {
-        userName = "indydutch"
-        password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
-    }
 })
