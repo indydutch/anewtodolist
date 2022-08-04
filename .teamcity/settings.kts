@@ -46,6 +46,8 @@ object Build : BuildType({
     name = "Build"
 
     params {
+        checkbox("env.DRYRUN", "", description = "If enabled, does not perform any publish, only reports the actions it would take.", display = ParameterDisplay.PROMPT,
+                  checked = "-d")
         text("env.CONFIRMATION", "", description = "WARNING: This will upload the installers to the web site. Please review the Dependencies tab for what versions will be published.", display = ParameterDisplay.PROMPT,
               regex = """\biamauthorizedtorunthisbuild\b""", validationMessage = "Please contact the product director before continuing.")
         text("PublishVersion", "", description = """Publish Version we are uploading. Typically the shortened version, for example 12.0 or 11.2.4, must match the start of the version in the files provided as input. Set "preview" to publish preview build.""", display = ParameterDisplay.PROMPT, allowEmpty = false)
