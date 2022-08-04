@@ -62,6 +62,10 @@ object Build : BuildType({
         finishBuildTrigger {
             buildType = "${Step2.id}"
         }
+        finishBuildTrigger {
+            buildType = "${Build1.id}"
+            successfulOnly = true
+        }
     }
 
     dependencies {
