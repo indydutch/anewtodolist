@@ -109,6 +109,11 @@ object Build1 : BuildType({
 
 object BuildAll : BuildType({
     name = "Build All"
+
+    dependencies {
+        snapshot(Build) {
+        }
+    }
 })
 
 object Step1 : BuildType({
