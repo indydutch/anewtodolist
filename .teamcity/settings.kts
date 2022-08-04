@@ -28,6 +28,7 @@ version = "2022.04"
 
 project {
 
+    buildType(Step2)
     buildType(Build)
 }
 
@@ -49,4 +50,8 @@ object Build : BuildType({
         vcs {
         }
     }
+})
+
+object Step2 : BuildType({
+    name = "Step 2"
 })
