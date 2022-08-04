@@ -70,6 +70,11 @@ object Build : BuildType({
 object Step2 : BuildType({
     name = "Step 2"
 
+    params {
+        text("Confirmation", "", description = "WARNING: This will upload the installers to the web site. Please review the Dependencies tab for what versions will be published.", display = ParameterDisplay.PROMPT,
+              regex = """\biamauthorizedtorunthisbuild\b""", validationMessage = "Please contact the product director before continuing.")
+    }
+
     vcs {
         root(HttpsGithubComIndydutchCheckBuildSequences1git)
     }
