@@ -118,6 +118,12 @@ object Step2 : BuildType({
         }
     }
 
+    triggers {
+        finishBuildTrigger {
+            buildType = "${Step1.id}"
+        }
+    }
+
     dependencies {
         snapshot(Step1) {
             onDependencyFailure = FailureAction.FAIL_TO_START
