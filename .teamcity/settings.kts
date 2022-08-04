@@ -31,10 +31,12 @@ version = "2022.04"
 
 project {
 
+    vcsRoot(HttpsGithubComIndydutchCheckBuildSequences0gitRefsHeadsMain)
     vcsRoot(HttpsGithubComIndydutchCheckBuildSequences0git)
     vcsRoot(HttpsGithubComIndydutchCheckBuildSequences1git)
 
     buildType(Step2)
+    buildType(Step1)
     buildType(Build)
 }
 
@@ -68,6 +70,19 @@ object Build : BuildType({
     }
 })
 
+object Step1 : BuildType({
+    name = "Step 1"
+
+    vcs {
+        root(HttpsGithubComIndydutchCheckBuildSequences0gitRefsHeadsMain)
+    }
+
+    triggers {
+        vcs {
+        }
+    }
+})
+
 object Step2 : BuildType({
     name = "Step 2"
 
@@ -97,6 +112,17 @@ object HttpsGithubComIndydutchCheckBuildSequences0git : GitVcsRoot({
     name = "https://github.com/indydutch/check-build-sequences-0.git"
     url = "https://github.com/indydutch/check-build-sequences-0.git"
     branch = "refs/heads/main"
+    authMethod = password {
+        userName = "indydutch"
+        password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
+    }
+})
+
+object HttpsGithubComIndydutchCheckBuildSequences0gitRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/indydutch/check-build-sequences-0.git#refs/heads/main"
+    url = "https://github.com/indydutch/check-build-sequences-0.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
     authMethod = password {
         userName = "indydutch"
         password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
