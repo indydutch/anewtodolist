@@ -33,9 +33,11 @@ project {
 
     vcsRoot(HttpsGithubComIndydutchCheckBuildSequences0gitRefsHeadsMain)
     vcsRoot(HttpsGithubComIndydutchCheckBuildSequences1git)
+    vcsRoot(HttpsGithubComIndydutchCheckBuildSequences2gitRefsHeadsMain)
 
     buildType(Step2)
     buildType(Step1)
+    buildType(Build1)
     buildType(Build)
 }
 
@@ -64,6 +66,19 @@ object Build : BuildType({
 
     dependencies {
         snapshot(Step2) {
+        }
+    }
+})
+
+object Build1 : BuildType({
+    name = "Build (1)"
+
+    vcs {
+        root(HttpsGithubComIndydutchCheckBuildSequences2gitRefsHeadsMain)
+    }
+
+    triggers {
+        vcs {
         }
     }
 })
@@ -144,6 +159,17 @@ object HttpsGithubComIndydutchCheckBuildSequences1git : GitVcsRoot({
     name = "https://github.com/indydutch/check-build-sequences-1.git"
     url = "https://github.com/indydutch/check-build-sequences-1.git"
     branch = "main"
+    authMethod = password {
+        userName = "indydutch"
+        password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
+    }
+})
+
+object HttpsGithubComIndydutchCheckBuildSequences2gitRefsHeadsMain : GitVcsRoot({
+    name = "https://github.com/indydutch/check-build-sequences-2.git#refs/heads/main"
+    url = "https://github.com/indydutch/check-build-sequences-2.git"
+    branch = "refs/heads/main"
+    branchSpec = "refs/heads/*"
     authMethod = password {
         userName = "indydutch"
         password = "credentialsJSON:41aaa045-ee81-4936-b334-9b0cdafe9818"
