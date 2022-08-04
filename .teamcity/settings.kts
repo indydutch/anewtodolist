@@ -75,6 +75,7 @@ object Step2 : BuildType({
               regex = """\biamauthorizedtorunthisbuild\b""", validationMessage = "Please contact the product director before continuing.")
         checkbox("DryRun", "", description = "If enabled, does not perform any publish, only reports the actions it would take.", display = ParameterDisplay.PROMPT,
                   checked = "-d")
+        text("PublishVersion", "", description = """Publish Version we are uploading. Typically the shortened version, for example 12.0 or 11.2.4, must match the start of the version in the files provided as input. Set "preview" to publish preview build.""", display = ParameterDisplay.PROMPT, allowEmpty = false)
     }
 
     vcs {
