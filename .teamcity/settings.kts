@@ -64,6 +64,7 @@ object Build : BuildType({
             buildType = "${Step2.id}"
         }
         finishBuildTrigger {
+            enabled = false
             buildType = "${Build1.id}"
             successfulOnly = true
         }
