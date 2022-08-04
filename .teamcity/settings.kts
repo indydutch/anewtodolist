@@ -71,7 +71,7 @@ object Build : BuildType({
 })
 
 object Build1 : BuildType({
-    name = "Build (1)"
+    name = "Step 2.1"
 
     vcs {
         root(HttpsGithubComIndydutchCheckBuildSequences2gitRefsHeadsMain)
