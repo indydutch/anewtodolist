@@ -156,6 +156,7 @@ object Step2 : BuildType({
 
     triggers {
         finishBuildTrigger {
+            enabled = false
             buildType = "${Step1.id}"
         }
     }
