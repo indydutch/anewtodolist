@@ -66,6 +66,8 @@ object Build : BuildType({
     }
 
     dependencies {
+        snapshot(Build1) {
+        }
         snapshot(Step2) {
         }
     }
