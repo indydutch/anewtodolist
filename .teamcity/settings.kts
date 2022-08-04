@@ -57,10 +57,6 @@ object Build : BuildType({
 
 object Step2 : BuildType({
     name = "Step 2"
-
-    vcs {
-        root(CheckBuildSequences1)
-    }
 })
 
 object CheckBuildSequences1 : GitVcsRoot({
