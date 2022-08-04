@@ -57,6 +57,10 @@ object Build : BuildType({
 
 object Step2 : BuildType({
     name = "Step 2"
+
+    vcs {
+        root(HttpsGithubComIndydutchCheckBuildSequences1git)
+    }
 })
 
 object HttpsGithubComIndydutchCheckBuildSequences1git : GitVcsRoot({
