@@ -64,7 +64,6 @@ object Build : BuildType({
 
     dependencies {
         snapshot(Step2) {
-            onDependencyFailure = FailureAction.FAIL_TO_START
         }
     }
 })
